@@ -65,8 +65,34 @@ https://webtorrent.io/docs
 
 
 
-
-
 ================STAGE 2 completly serverless=====================
 
-s3 static page, javascript
+s3 static page (javascript) [s3]
+	{
+ 	form submit > base64 encode clientsite (javascript) [s3]
+ 	Action submit addtorrentapi
+ 	}
+
+addtorrentapi relay (nodejs) [lambda]
+ 	{
+ 	action create queue item (torrent_added) [sqs]
+ 	action webAPI add torrent (deluge webapi) [ec2]
+ 	}
+
+watch_que (torrent_added) (nodejs) [lambda]
+	{
+	poll deluge api, update queue status (nodejs) [Lambda]
+	action generate/update static page with torrent status (javascript [s3]
+    }
+
+ Deluge Transfer completed torrent [ec2]
+ 	{
+ 	action nodeJS transfer to s3
+ 	s3-SNS file transfer action add queue item (file_transfering)
+ 	}
+	
+s3-SNS file complete
+	{
+	Action geneate static complete page embedding http ready file. (nodejs) [lambda]
+    }
+

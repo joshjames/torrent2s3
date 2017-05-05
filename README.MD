@@ -23,7 +23,7 @@ made up of AWS major components, the project is purely for me to catch up on my 
 ##Operational Diagram##
 
 Inline-style: 
-![operations](https://github.com/joshjames/torrent2s3/Operations.png "Operations Diagram")
+![operations](https://github.com/joshjames/torrent2s3/blob/master/Operations.png "Operations Diagram")
 
 
 

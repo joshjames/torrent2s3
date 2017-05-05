@@ -1,7 +1,8 @@
 **TORRENT 2 S3**
 
 this will be a complete AWS stack for my own purposes.
-made up of 3 major components.
+made up of AWS major components, the project is purely for me to catch up on my aws skills, particularlly around a complete stack as code.
+
 
 1. Web front end - simple upload form (with eventual api support) to load a torrent file or a magnet URI for a torrent (also will support remote torrent url loading)
 
@@ -18,6 +19,13 @@ made up of 3 major components.
 6. s3 trigger complete update sns>sqs (remove queue) 
 
 7. page queue updated with final trigger saying completed, present HTTP link to file.
+
+##Operational Diagram##
+
+Inline-style: 
+![operations](https://github.com/joshjames/torrent2s3/Operations.png "Operations Diagram")
+
+
 
 
 
